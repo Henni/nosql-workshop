@@ -1,0 +1,50 @@
+id:ID(Piece);date;location;work;key
+1;1761;Salzburg;Minuet for Harpsichord (See K. 1e);G Major
+2;1762;Salzburg;Minuet for Harpsichord;F Major
+3;1762;Salzburg;Allegro for Harpsichord;B Flat Major
+4;1762;Salzburg;Minuet for Harpsichord;F Major
+5;1762;Salzburg;Minuet for Harpsichord;F Major
+26;1766;The Hague;Sonata for Harpsichord & Violin;
+27;1766;The Hague;Sonata for Harpsichord & Violin;
+16;1764;London;Symphony No. 1;E Flat Major
+17;1764;London;Symphony No. 2 (Doubtful);B Flat Major
+18;1764;London;Symphony No. 3 (copy from K. F. Abel);E Flat Major
+26;1766;The Hague;Sonata for Harpsichord & Violin;G Major
+41;1767;Salzburg;Concerto for Piano No. 4;
+51;1768;Vienna;Opera buffa `La finta semplice';
+55;1788;Vienna;Sonata for Piano & Violin (Doubtful);
+56;1788;Vienna;Sonata for Piano & Violin (Doubtful);
+57;1788;Vienna;Sonata for Piano & Violin (Doubtful);
+58;1788;Vienna;Sonata for Piano & Violin (Doubtful);
+112;1771;Milan;Symphony No. 13;F Major
+113;1771;Milan;Divertimento No. 1;E Flat Major
+114;1771;Salzburg;Symphony No. 14;A Major
+115;1773;Salzburg;Mass `Missa brevis';C Major
+183;1773;Salzburg;Symphony No. 25;G minor
+184;1773;Salzburg;Symphony No. 26 (Overture);E Flat Major
+185;1773;Vienna;Serenade No. 3 `Finalmusik';D Major
+186;1773;Milan;Divertimento No. 4;B Flat Major
+187;1773;Salzburg?;Divertimento No. 5;C Major
+188;1776;Salzburg;Divertimento No. 6;C Major
+189;1773;Vienna;March for Orchestra;D Major
+190;1773;Salzburg;Concertone for 2 Violins & Orchestra;C Major
+191;1774;Salzburg;Bassoon Concerto;B Flat Major
+192;1774;Salzburg;Mass `Missa brevis';F Major
+193;1774;Salzburg;Dixit & Magnificat;C Major
+194;1774;Salzburg;Mass `Missa brevis';D Major
+195;1774;Salzburg;Litaniae Lauretanae;D Major
+196;1774;Salzburg;Opera buffa `La finta giardiniera';
+367;1781;Munich;Ballet Music to Idomeneo;
+569;1789;Vienna;Aria `Ohne Zwang' (lost);
+570;1789;Vienna;Sonata for Piano;B Flat Major
+573;1789;Potsdam;9 Variations for Piano (Duport);D Major
+574;1789;Leipzig;Gigue for Piano;G minor
+575;1789;Vienna;Quartet for Strings No. 21;D Major
+576;1789;Vienna;Sonata for Piano;D Major
+581;1789;Vienna;Quintet for Clarinet & Strings;A Major
+587;1789;Vienna;Contredanse for Orchestra;
+588;1790;Vienna;Opera buffa `Cosi fan tutte';
+589;1790;Vienna;Quartet for Strings No. 22;B Flat Major
+590;1790;Vienna;Quartet for Strings No. 23;F Major
+598;1791;Vienna;Song with Piano `Wir Kinder';
+622;1791;Vienna;Concerto for Clarinet;A Major
