@@ -1,8 +1,6 @@
 # README
 
-## The Model
-
-![image of movie model](./img/model.png)
+## Model
 
 ### Nodes
 
@@ -82,9 +80,7 @@ If everything runs corretly you should get the following:
 
   ![image of movie model](./img/neo4jBrowser_CypherCmd.png)
 
-* continue running each of the scripts (each deliniated by a semicolon) found in [setupCypherCommands.txt](./setupCypherCommands.txt).  You can verify everything loaded correctly form the neo4j browser by clicking on the Node labels | Movie and then double clicking one of the movies (like Cloud Atlas illustrated below)
-
-  ![image of Cloud Atlas movie node](./img/verifyCloudAtlasMovie.png)
+* continue running each of the scripts (each deliniated by a semicolon) found in [setupCypherCommands.txt](./setupCypherCommands.txt).  You can verify everything loaded correctly form the neo4j browser by clicking on the Node labels.
 
 ## Workshop
 Let's start with taking a look at the current state of the database.
