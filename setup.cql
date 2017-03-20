@@ -5,3 +5,21 @@ CREATE CONSTRAINT ON (n:Composer) ASSERT n.id IS UNIQUE;
 CREATE CONSTRAINT ON (n:Piece) ASSERT n.id IS UNIQUE;
 
 CREATE CONSTRAINT ON (n:Type) ASSERT n.id IS UNIQUE;
+
+LOAD CSV WITH HEADERS FROM "file:///import/piece_node.csv" AS r FIELDTERMINATOR ';'
+CREATE (p:Piece {
+  id: toInteger(r.`id:ID(Piece)`),
+  work: r.work,
+  location: r.location,
+  year: toInteger(r.date)
+});
+
+LOAD CSV WITH HEADERS FROM "file:///import/type_node.csv" AS r FIELDTERMINATOR ';'
+CREATE (p:Type {
+  id: toInteger(r.`id:ID(Type)`),
+  name: r.name
+});
+
+LOAD CSV WITH HEADERS FROM "file:///import/type_rels.csv" AS r FIELDTERMINATOR ';'
+MATCH (p:Piece {id: toInteger(r.`:START_ID(Piece)`)}), (t:Type {id: toInteger(r.`:END_ID(Type)`)})
+CREATE (p)-[:HAS_TYPE]->(t);

@@ -4,12 +4,11 @@ id:ID(Piece);date;location;work;key
 3;1762;Salzburg;Allegro for Harpsichord;B Flat Major
 4;1762;Salzburg;Minuet for Harpsichord;F Major
 5;1762;Salzburg;Minuet for Harpsichord;F Major
-26;1766;The Hague;Sonata for Harpsichord & Violin;
-27;1766;The Hague;Sonata for Harpsichord & Violin;
 16;1764;London;Symphony No. 1;E Flat Major
 17;1764;London;Symphony No. 2 (Doubtful);B Flat Major
 18;1764;London;Symphony No. 3 (copy from K. F. Abel);E Flat Major
-26;1766;The Hague;Sonata for Harpsichord & Violin;G Major
+26;1766;The Hague;Sonata for Harpsichord & Violin;
+27;1766;The Hague;Sonata for Harpsichord & Violin;
 41;1767;Salzburg;Concerto for Piano No. 4;
 51;1768;Vienna;Opera buffa `La finta semplice';
 55;1788;Vienna;Sonata for Piano & Violin (Doubtful);
