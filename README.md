@@ -1,32 +1,41 @@
 # README
 
-This Neo4j-based node / react web app displays movie and person data in a manner similar to IMDB.  It is designed to serve as a template for further development projects.  Feel encouraged to fork and update this repo!
-
 ## The Model
 
 ![image of movie model](./img/model.png)
 
 ### Nodes
 
-* `Movie`
-* `Person`
-* `Genre`
-* `Keyword`
+* `Piece`
+* `Composer`
+* `Type`
+* `User`
 
 ### Relationships
 
-* `(:Person)-[:ACTED_IN {role:"some role"}]->(:Movie)`
-* `(:Person)-[:DIRECTED]->(:Movie)`
-* `(:Person)-[:WRITER_OF]->(:Movie)`
-* `(:Person)-[:PRODUCED]->(:Movie)`
-* `(:MOVIE)-[:HAS_GENRE]->(:Genre)`
+* `(:Composer)-[:COMPOSED {role:"some role"}]->(:Movie)`
+* `(:Piece)-[:HAS_TYPE]->(:TYPE)`
+* `(:User)-[:RATED {rating:"1-5"}]->(:Piece)`
 
 ## Database Setup
+### Docker Setup
 
-### Unix _[Video Instructions](https://youtu.be/O71B2KcTD6A)_
+* Run the Neo4j Docker Container
+```
+docker run \      
+    --publish=7474:7474 --publish=7687:7687 \
+    --volume=$HOME/neo4j/data:/data \
+    --volume=$HOME/neo4j/import:/var/lib/neo4j/import \
+    neo4j
+```
+* run the following setup script:
+```
+    docker exec -i my-neo4j bin/neo4j-shell < ./setup.cql
+```
 
+### Local Install
+As an alternativ to Docker you can also install Neo4j locally
 * [Download Neo4j Community Edition: .tar Version](https://neo4j.com/download/other-releases/)
-* [video instructions start here](https://youtu.be/O71B2KcTD6A)
 * Set your `NEO4J_HOME` variable: `export NEO4J_HOME=/path/to/neo4j-community`
 * From this project's root directory, run the import script:
 
