@@ -25,7 +25,7 @@
 docker run \
     --publish=7474:7474 --publish=7687:7687 \
     --volume=$HOME/neo4j/data:/data \
-    --volume=$HOME/neo4j/import:/import \
+    --volume=$HOME/neo4j/import:/var/lib/neo4j/import \
     --name neo4j \
     neo4j
 ```
@@ -35,7 +35,7 @@ cp csv/*.csv $HOME/neo4j/import
 ```
 * Initialize the database:
 ```
-docker exec -i neo4j bin/neo4j-shell -path /data < ./setup.cql
+docker exec -i neo4j bin/neo4j-shell -path /data/databases/graph.db < ./setup.cql
 ```
 
 ### Local Install
@@ -86,3 +86,52 @@ If everything runs corretly you should get the following:
 
   ![image of Cloud Atlas movie node](./img/verifyCloudAtlasMovie.png)
 
+## Workshop
+Let's start with taking a look at the current state of the database.
+Therefore open the Neo4j [browser](http://localhost:7474/browser/).
+
+Take a look at all currently existing Pieces in the database, by entering this command:
+```
+MATCH (n:Piece) RETURN n;
+```
+We can also find out which Pieces are Quartetts:
+```
+MATCH (n:Piece)-[:TYPE]->(:Type {name: 'Quartett'}) RETURN n;
+```
+
+Moving on we can also create a new node ourselves. Let's add `Mozart` as a `Composer` to our database:
+```
+CREATE (n:Composer {name:'Mozart'}) RETURN n;
+```
+
+As all the Pieces in the database where composed by Mozart, connect them with a `COMPOSED` relationship:
+```
+MATCH (m:Composer {name:"Mozart"}), (p:Piece)
+CREATE (m)-[COMPOSED]->(p)
+```
+
+As described one of the strength of Graph Databases is the Traversal over its paths. This can be used for recommendation systems, for example.
+
+To set this up let's create a few users:
+```
+LOAD CSV WITH HEADERS FROM "file:///users_node.csv" AS r FIELDTERMINATOR ';'
+CREATE (p:User {
+  id: toInteger(r.`id:ID(User)`),
+  name: r.name
+});
+```
+
+Also create a few ratings:
+```
+MATCH (u:User), (p:Piece)
+WITH u, p
+WHERE rand() < 0.1
+CREATE (u)-[:RATED]->(p)
+```
+and assign rating scores:
+```
+MATCH (:User)-[r:RATED]->(:Piece)
+SET r.rating = floor(rand()*6)
+```
+
+Your task is now to develop an approach to recommend Pieces to a user, based on all information currently stored in the database.
