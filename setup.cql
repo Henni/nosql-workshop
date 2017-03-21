@@ -11,7 +11,8 @@ CREATE (p:Piece {
   id: toInteger(r.`id:ID(Piece)`),
   work: r.work,
   location: r.location,
-  year: toInteger(r.date)
+  year: toInteger(r.date),
+  key: r.key
 });
 
 LOAD CSV WITH HEADERS FROM "file:///type_node.csv" AS r FIELDTERMINATOR ';'
