@@ -91,9 +91,9 @@ Take a look at all currently existing Pieces in the database, by entering this c
 ```
 MATCH (n:Piece) RETURN n;
 ```
-We can also find out which Pieces are Quartetts:
+We can also find out which Pieces are Quartets:
 ```
-MATCH (n:Piece)-[:TYPE]->(:Type {name: 'Quartett'}) RETURN n;
+MATCH (n:Piece)-[:HAS_TYPE]->(:Type {name: 'Quartet'}) RETURN n;
 ```
 
 Moving on we can also create a new node ourselves. Let's add `Mozart` as a `Composer` to our database:
@@ -104,10 +104,10 @@ CREATE (n:Composer {name:'Mozart'}) RETURN n;
 As all the Pieces in the database where composed by Mozart, connect them with a `COMPOSED` relationship:
 ```
 MATCH (m:Composer {name:"Mozart"}), (p:Piece)
-CREATE (m)-[COMPOSED]->(p)
+CREATE (m)-[:COMPOSED]->(p)
 ```
 
-As described one of the strength of Graph Databases is the Traversal over its paths. This can be used for recommendation systems, for example.
+As described one of the strength of Graph Databases is the traversal over its paths. This can be used for recommendation systems, for example.
 
 To set this up let's create a few users:
 ```
