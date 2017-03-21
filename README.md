@@ -17,6 +17,7 @@
 
 ## Database Setup
 ### Docker Setup
+This is the recommended way and should work similarly on Windows.
 
 * Run the Neo4j Docker Container
 ```
@@ -33,7 +34,7 @@ cp csv/*.csv $HOME/neo4j/import
 ```
 * Initialize the database:
 ```
-docker exec -i neo4j bin/neo4j-shell -path /data/databases/graph.db < ./setup.cql
+docker exec -i neo4j bin/cypher-shell -u neo4j -p neo < ./setup.cql
 ```
 
 ### Local Install
